@@ -1,0 +1,158 @@
+.wrapper {
+  margin: 0 auto;
+  width: 300px;
+  height: 500px;
+  background-color: rgb(182, 226, 240);
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  border: solid 1px rgb(211, 211, 211);
+  cursor: pointer;
+}
+
+.button:hover, .button:focus {
+  background-color: rgb(211, 211, 211);
+}
+
+/* Main-content */
+
+.slide-content {
+  display: flex;
+  width: 900px;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1350ms;
+}
+
+.section {
+  width: 300px;
+  height: 450px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 50px;
+  background-color: rgb(211, 211, 211);
+}
+
+.content {
+  height: 390px;
+  padding-top: 10px;
+  padding-left: 10px;
+  overflow-y: auto;
+}
+
+/* section home  */
+
+.home .button:hover+.hidden-span {
+  opacity: 1;
+  color: rgb(28, 56, 184);
+}
+
+.home .button+.hidden-span {
+  display: inline-block;
+  margin-left: 10px;
+  opacity: 0;
+  color: rgb(28, 56, 184);
+  transition: opacity cubic-bezier(0.165, 0.84, 0.44, 1) 2000ms;
+}
+
+/* section stores  */
+
+.stores .item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.item .icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 35px;
+  margin-right: 80px;
+  text-decoration: none;
+  color: blueviolet;
+  background-color: rgb(211, 187, 187);
+  border-radius: 4px;
+}
+
+.item .icon:last-child {
+  margin-bottom: 0;
+}
+
+/* New coupons */
+
+.coupons .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coupons .question {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.coupons .coupons-btn {
+  padding: 10px 25px;
+  outline: none;
+}
+
+/* Footer  */
+
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50px;
+  background-color: rgb(211, 211, 211);
+}
+
+/* checkbox icon  */
+
+.checkbox-cell {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  /* HIDDEN */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  /* HIDDEN */
+}
+
+.checkbox-icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: rgb(211, 211, 211);
+  transition: fill cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
+}
+
+.checkbox:checked+.checkbox-icon, .checkbox:hover+.checkbox-icon, .checkbox:focus+.checkbox-icon {
+  fill: blueviolet;
+}

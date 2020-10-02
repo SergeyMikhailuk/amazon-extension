@@ -1,10 +1,23 @@
 const sliderRef = document.querySelector(".js-slider");
 const radioRefs = document.getElementsByName("menu-btn");
 const ulStoresRef = document.querySelector(".js-stores .list");
+const copySpansRef = document.querySelectorAll(".hidden-span");
 
-for (let i = 0; i < radioRefs.length; i += 1) {
-  radioRefs[i].addEventListener("change", handleButton);
+for (const span of copySpansRef) {
+  span.addEventListener("click", copiedToClipboard);
 }
+
+function copiedToClipboard(e) {
+  const textToCopy = e.currentTarget.nextSibling.nextSibling.textContent.trim();
+  if (textToCopy) navigator.clipboard.writeText(textToCopy);
+
+  console.log(textToCopy);
+}
+
+for (const radio of radioRefs) {
+  radio.addEventListener("change", handleButton);
+}
+
 function handleButton() {
   switch (this.value) {
     case "home":
@@ -31,7 +44,7 @@ function createStore(count) {
     const anchorRef = document.createElement("a");
     anchorRef.href = "";
     anchorRef.classList.add("icon-link");
-    anchorRef.textContent = "LOGO";
+    anchorRef.textContent = `LOGO #${i + 1}`;
     const buttonRef = document.createElement("button");
     buttonRef.classList.add("button");
     buttonRef.textContent = "Visit stor😈";

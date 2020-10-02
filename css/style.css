@@ -31,7 +31,7 @@
 .slide-content {
   display: flex;
   width: 900px;
-  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1350ms;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 1000ms;
 }
 
 .section {
@@ -57,17 +57,16 @@
 
 /* section home  */
 
-.home .button:hover+.hidden-span {
+.home .button:hover+.hidden-span, .home .hidden-span:hover {
   opacity: 1;
-  color: rgb(28, 56, 184);
 }
 
-.home .button+.hidden-span {
+.home .hidden-span {
   display: inline-block;
   margin-left: 10px;
   opacity: 0;
   color: rgb(28, 56, 184);
-  transition: opacity cubic-bezier(0.165, 0.84, 0.44, 1) 2000ms;
+  transition: opacity .8s;
 }
 
 /* section stores  */

@@ -7,15 +7,12 @@ const homeListRef = document.querySelector(".js-home .list");
 homeListRef.addEventListener("click", homeListHandler);
 
 function homeListHandler(evt) {
-  if (evt.target.nodeName === "SPAN") {
-    console.log("this is a SPAN");
-    const textToCopy = evt.target.nextSibling.nextSibling.textContent.trim();
-    console.log(textToCopy);
-    return;
-  }
   if (evt.target.nodeName !== "SPAN") {
     console.log("this is not a SPAN");
+    return;
   }
+  const textToCopy = evt.target.nextSibling.nextSibling.textContent.trim();
+  console.log(textToCopy);
 }
 
 for (const radio of radioRefs) {

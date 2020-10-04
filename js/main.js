@@ -3,15 +3,19 @@ const radioRefs = document.getElementsByName("menu-btn");
 const ulStoresRef = document.querySelector(".js-stores .list");
 const copySpansRef = document.querySelectorAll(".hidden-span");
 
-for (const span of copySpansRef) {
-  span.addEventListener("click", copiedToClipboard);
-}
+const homeListRef = document.querySelector(".js-home .list");
+homeListRef.addEventListener("click", homeListHandler);
 
-function copiedToClipboard(e) {
-  const textToCopy = e.currentTarget.nextSibling.nextSibling.textContent.trim();
-  if (textToCopy) navigator.clipboard.writeText(textToCopy);
-
-  console.log(textToCopy);
+function homeListHandler(evt) {
+  if (evt.target.nodeName === "SPAN") {
+    console.log("this is a SPAN");
+    const textToCopy = evt.target.nextSibling.nextSibling.textContent.trim();
+    console.log(textToCopy);
+    return;
+  }
+  if (evt.target.nodeName !== "SPAN") {
+    console.log("this is not a SPAN");
+  }
 }
 
 for (const radio of radioRefs) {
